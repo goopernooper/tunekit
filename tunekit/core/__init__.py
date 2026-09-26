@@ -1,6 +1,6 @@
-from hyperopt.core.objective import Objective, ObjectiveDirection
-from hyperopt.core.optimizer import Optimizer
-from hyperopt.core.search_space import (
+from tunekit.core.objective import Objective, ObjectiveDirection
+from tunekit.core.optimizer import Optimizer
+from tunekit.core.search_space import (
     Categorical,
     HyperParameter,
     IntUniform,
@@ -8,8 +8,8 @@ from hyperopt.core.search_space import (
     SearchSpace,
     Uniform,
 )
-from hyperopt.core.strategy import SearchStrategy
-from hyperopt.core.trial import Trial, TrialStatus
+from tunekit.core.strategy import SearchStrategy
+from tunekit.core.trial import Trial, TrialStatus
 
 __all__ = [
     "Categorical",

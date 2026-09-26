@@ -1,7 +1,7 @@
-from hyperopt.core.objective import ObjectiveDirection
-from hyperopt.core.optimizer import Optimizer
-from hyperopt.core.search_space import Categorical, IntUniform, SearchSpace, Uniform
-from hyperopt.strategies.grid_search import GridSearch
+from tunekit.core.objective import ObjectiveDirection
+from tunekit.core.optimizer import Optimizer
+from tunekit.core.search_space import Categorical, IntUniform, SearchSpace, Uniform
+from tunekit.strategies.grid_search import GridSearch
 
 
 class TestGridSearch:
@@ -39,7 +39,7 @@ class TestGridSearch:
         assert best.score < 0.1
 
     def test_grid_search_with_log_uniform(self):
-        from hyperopt.core.search_space import LogUniform
+        from tunekit.core.search_space import LogUniform
         space = SearchSpace()
         space.add(LogUniform("lr", 1e-4, 1e-1))
         gs = GridSearch(space, resolution=5)

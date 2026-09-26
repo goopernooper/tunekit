@@ -3,7 +3,7 @@ import random
 
 import pytest
 
-from hyperopt.core.search_space import (
+from tunekit.core.search_space import (
     Categorical,
     IntUniform,
     LogUniform,

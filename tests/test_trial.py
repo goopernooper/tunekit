@@ -1,6 +1,6 @@
 import time
 
-from hyperopt.core.trial import Trial, TrialStatus
+from tunekit.core.trial import Trial, TrialStatus
 
 
 class TestTrial:

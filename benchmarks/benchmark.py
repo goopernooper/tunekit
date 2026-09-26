@@ -6,7 +6,7 @@ import time
 from dataclasses import dataclass
 from typing import Any, Callable
 
-from hyperopt import (
+from tunekit import (
     BayesianOptimization,
     GridSearch,
     ObjectiveDirection,
@@ -15,7 +15,7 @@ from hyperopt import (
     SearchSpace,
     Uniform,
 )
-from hyperopt.strategies.hyperband import Hyperband
+from tunekit.strategies.hyperband import Hyperband
 
 
 @dataclass
@@ -125,7 +125,7 @@ def run_benchmark() -> list[BenchmarkResult]:
 def print_results(results: list[BenchmarkResult]) -> None:
     header = f"{'Function':<14} {'Strategy':<16} {'Best Score':>12} {'Trials':>8} {'Time (s)':>10}"
     print("\n" + "=" * len(header))
-    print("HYPEROPT-FRAMEWORK BENCHMARK")
+    print("tunekit benchmark")
     print(f"{DIMENSIONS}D test functions, {N_TRIALS} trials per strategy (seed={SEED})")
     print("=" * len(header))
     print(header)

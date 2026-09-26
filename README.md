@@ -1,4 +1,4 @@
-# hyperopt-framework
+# tunekit
 
 A lightweight hyperparameter optimization library built from scratch in Python. Plug in any model, define a search space, pick a strategy, and automatically run, track, and compare experiments — no Optuna or Ray Tune under the hood.
 
@@ -18,7 +18,7 @@ pip install -e .
 ## Quick Start
 
 ```python
-from hyperopt import (
+from tunekit import (
     SearchSpace, LogUniform, Uniform, Categorical,
     RandomSearch, Optimizer, ObjectiveDirection, SQLiteTracker,
 )
@@ -56,7 +56,7 @@ print(f"Best params: {best.params}")
 Samples uniformly from the search space. Good baseline.
 
 ```python
-from hyperopt import RandomSearch
+from tunekit import RandomSearch
 strategy = RandomSearch(space, seed=42)
 ```
 
@@ -65,7 +65,7 @@ strategy = RandomSearch(space, seed=42)
 Exhaustive search over a discretized grid. Set `resolution` to control how many points per continuous dimension.
 
 ```python
-from hyperopt import GridSearch
+from tunekit import GridSearch
 strategy = GridSearch(space, resolution=10)
 print(f"Total combinations: {strategy.total_combinations}")
 ```
@@ -75,7 +75,7 @@ print(f"Total combinations: {strategy.total_combinations}")
 Gaussian Process surrogate with Expected Improvement acquisition function. Normalizes inputs and targets, uses Cholesky decomposition for numerical stability.
 
 ```python
-from hyperopt import BayesianOptimization
+from tunekit import BayesianOptimization
 strategy = BayesianOptimization(
     space,
     seed=42,
@@ -89,7 +89,7 @@ strategy = BayesianOptimization(
 Adaptive resource allocation via successive halving. Requires a `report_fn(params, resource) -> score` where `resource` controls training budget (epochs, data fraction, etc.).
 
 ```python
-from hyperopt import Hyperband
+from tunekit import Hyperband
 
 def report_fn(params, resource):
     # resource = number of epochs to train
@@ -112,7 +112,7 @@ best = hb.run_all()
 Stop optimization early when no improvement is found:
 
 ```python
-from hyperopt import Optimizer, RandomSearch, ObjectiveDirection, no_improvement_stopping
+from tunekit import Optimizer, RandomSearch, ObjectiveDirection, no_improvement_stopping
 
 optimizer = Optimizer(
     strategy=RandomSearch(space, seed=42),
@@ -128,8 +128,8 @@ best = optimizer.run(n_trials=500)  # will stop before 500 if plateau detected
 Visualize results with the built-in FastAPI + React dashboard:
 
 ```bash
-pip install hyperopt-framework[dashboard]
-python -m hyperopt.dashboard --db experiments.db
+pip install -e ".[dashboard]"
+python -m tunekit.dashboard --db experiments.db
 ```
 
 Opens a browser UI with optimization progress charts, stats cards, and a trial history table.
@@ -153,7 +153,7 @@ with SQLiteTracker("experiments.db", experiment_name="v1") as tracker:
 Extend `SearchStrategy` to implement your own algorithm:
 
 ```python
-from hyperopt import SearchStrategy, SearchSpace, Trial
+from tunekit import SearchStrategy, SearchSpace, Trial
 
 class MyStrategy(SearchStrategy):
     def __init__(self, search_space: SearchSpace, seed=None):
@@ -201,8 +201,8 @@ pytest tests/ -v
 ## Project Structure
 
 ```
-hyperopt-framework/
-├── hyperopt/
+tunekit/
+├── tunekit/
 │   ├── core/
 │   │   ├── search_space.py    # HyperParameter types + SearchSpace
 │   │   ├── trial.py           # Trial dataclass + TrialStatus

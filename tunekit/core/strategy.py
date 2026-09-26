@@ -3,8 +3,8 @@ from __future__ import annotations
 from abc import ABC, abstractmethod
 from typing import Any
 
-from hyperopt.core.search_space import SearchSpace
-from hyperopt.core.trial import Trial
+from tunekit.core.search_space import SearchSpace
+from tunekit.core.trial import Trial
 
 
 class SearchStrategy(ABC):

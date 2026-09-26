@@ -8,13 +8,13 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import FileResponse
 from fastapi.staticfiles import StaticFiles
 
-from hyperopt.dashboard.routes import create_router
+from tunekit.dashboard.routes import create_router
 
 STATIC_DIR = Path(__file__).parent / "static"
 
 
 def create_app(db_path: str = "experiments.db") -> FastAPI:
-    app = FastAPI(title="Hyperopt Dashboard", version="0.1.0")
+    app = FastAPI(title="tunekit dashboard", version="0.1.0")
 
     app.add_middleware(
         CORSMiddleware,

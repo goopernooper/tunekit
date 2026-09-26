@@ -4,9 +4,9 @@ import math
 import random
 from typing import Any, Callable
 
-from hyperopt.core.search_space import SearchSpace
-from hyperopt.core.strategy import SearchStrategy
-from hyperopt.core.trial import Trial, TrialStatus
+from tunekit.core.search_space import SearchSpace
+from tunekit.core.strategy import SearchStrategy
+from tunekit.core.trial import Trial, TrialStatus
 
 ReportFn = Callable[[dict[str, Any], int], float]
 

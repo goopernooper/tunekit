@@ -1,6 +1,6 @@
 """Quickstart: optimize a simple function with Random Search + SQLite tracking."""
 
-from hyperopt import (
+from tunekit import (
     Categorical,
     LogUniform,
     ObjectiveDirection,

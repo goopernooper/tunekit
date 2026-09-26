@@ -4,7 +4,7 @@ from pathlib import Path
 import pytest
 from fastapi.testclient import TestClient
 
-from hyperopt import (
+from tunekit import (
     ObjectiveDirection,
     Optimizer,
     RandomSearch,
@@ -12,7 +12,7 @@ from hyperopt import (
     SearchSpace,
     Uniform,
 )
-from hyperopt.dashboard.app import create_app
+from tunekit.dashboard.app import create_app
 
 
 @pytest.fixture
@@ -80,4 +80,4 @@ class TestDashboardAPI:
     def test_serves_index(self, client):
         resp = client.get("/")
         assert resp.status_code == 200
-        assert "Hyperopt Dashboard" in resp.text
+        assert "tunekit dashboard" in resp.text

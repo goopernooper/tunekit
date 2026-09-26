@@ -1,10 +1,10 @@
 import numpy as np
 import pytest
 
-from hyperopt.core.objective import ObjectiveDirection
-from hyperopt.core.optimizer import Optimizer
-from hyperopt.core.search_space import Categorical, SearchSpace, Uniform
-from hyperopt.strategies.bayesian import (
+from tunekit.core.objective import ObjectiveDirection
+from tunekit.core.optimizer import Optimizer
+from tunekit.core.search_space import Categorical, SearchSpace, Uniform
+from tunekit.strategies.bayesian import (
     BayesianOptimization,
     GaussianProcessRegressor,
     expected_improvement,

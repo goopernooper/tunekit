@@ -3,14 +3,14 @@ from __future__ import annotations
 import itertools
 from typing import Any
 
-from hyperopt.core.search_space import (
+from tunekit.core.search_space import (
     Categorical,
     IntUniform,
     LogUniform,
     SearchSpace,
     Uniform,
 )
-from hyperopt.core.strategy import SearchStrategy
+from tunekit.core.strategy import SearchStrategy
 
 
 class GridSearch(SearchStrategy):

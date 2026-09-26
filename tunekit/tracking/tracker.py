@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from abc import ABC, abstractmethod
 
-from hyperopt.core.trial import Trial
+from tunekit.core.trial import Trial
 
 
 class ExperimentTracker(ABC):

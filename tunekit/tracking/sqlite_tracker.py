@@ -4,8 +4,8 @@ import json
 import sqlite3
 from pathlib import Path
 
-from hyperopt.core.trial import Trial, TrialStatus
-from hyperopt.tracking.tracker import ExperimentTracker
+from tunekit.core.trial import Trial, TrialStatus
+from tunekit.tracking.tracker import ExperimentTracker
 
 
 class SQLiteTracker(ExperimentTracker):

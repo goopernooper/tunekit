@@ -3,8 +3,8 @@ from __future__ import annotations
 import random
 from typing import Any
 
-from hyperopt.core.search_space import SearchSpace
-from hyperopt.core.strategy import SearchStrategy
+from tunekit.core.search_space import SearchSpace
+from tunekit.core.strategy import SearchStrategy
 
 
 class RandomSearch(SearchStrategy):

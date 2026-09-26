@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hyperopt Dashboard</title>
+    <title>tunekit dashboard</title>
     <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
     <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
@@ -124,7 +124,7 @@
             return (
                 <div className="container">
                     <div className="header">
-                        <h1>Hyperopt Dashboard</h1>
+                        <h1>tunekit dashboard</h1>
                         <select className="experiment-select" value={selected || ''} onChange={e => setSelected(e.target.value)}>
                             {experiments.map(exp => <option key={exp.name} value={exp.name}>{exp.name}</option>)}
                         </select>

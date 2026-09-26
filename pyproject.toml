@@ -3,7 +3,7 @@ requires = ["setuptools>=68.0", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "hyperopt-framework"
+name = "tunekit"
 version = "0.1.0"
 description = "Lightweight hyperparameter optimization library with pluggable search strategies and experiment tracking"
 readme = "README.md"
@@ -24,19 +24,19 @@ classifiers = [
 dependencies = ["numpy>=1.21"]
 
 [project.urls]
-Homepage = "https://github.com/goopernooper/hyperopt-framework"
-Repository = "https://github.com/goopernooper/hyperopt-framework"
-Issues = "https://github.com/goopernooper/hyperopt-framework/issues"
+Homepage = "https://github.com/goopernooper/tunekit"
+Repository = "https://github.com/goopernooper/tunekit"
+Issues = "https://github.com/goopernooper/tunekit/issues"
 
 [project.optional-dependencies]
-dev = ["pytest>=8.0", "pytest-cov"]
-dashboard = ["fastapi>=0.110", "uvicorn[standard]"]
+dev = ["pytest>=8.0", "pytest-cov", "fastapi>=0.141.1", "httpx2"]
+dashboard = ["fastapi>=0.141.1", "uvicorn[standard]"]
 
 [tool.setuptools.packages.find]
-include = ["hyperopt*"]
+include = ["tunekit*"]
 
 [tool.setuptools.package-data]
-"hyperopt.dashboard" = ["static/**"]
+"tunekit.dashboard" = ["static/**"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

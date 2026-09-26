@@ -1,11 +1,11 @@
 import tempfile
 from pathlib import Path
 
-from hyperopt.core.objective import ObjectiveDirection
-from hyperopt.core.optimizer import Optimizer, no_improvement_stopping
-from hyperopt.core.search_space import SearchSpace, Uniform
-from hyperopt.strategies.random_search import RandomSearch
-from hyperopt.tracking.sqlite_tracker import SQLiteTracker
+from tunekit.core.objective import ObjectiveDirection
+from tunekit.core.optimizer import Optimizer, no_improvement_stopping
+from tunekit.core.search_space import SearchSpace, Uniform
+from tunekit.strategies.random_search import RandomSearch
+from tunekit.tracking.sqlite_tracker import SQLiteTracker
 
 
 def quadratic(params: dict) -> float:

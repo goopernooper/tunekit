@@ -3,10 +3,10 @@ from __future__ import annotations
 import logging
 from typing import Any, Callable, Dict, Optional, Tuple, Union
 
-from hyperopt.core.objective import ObjectiveDirection
-from hyperopt.core.strategy import SearchStrategy
-from hyperopt.core.trial import Trial, TrialStatus
-from hyperopt.tracking.tracker import ExperimentTracker
+from tunekit.core.objective import ObjectiveDirection
+from tunekit.core.strategy import SearchStrategy
+from tunekit.core.trial import Trial, TrialStatus
+from tunekit.tracking.tracker import ExperimentTracker
 
 logger = logging.getLogger(__name__)
 

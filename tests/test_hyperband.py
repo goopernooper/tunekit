@@ -1,7 +1,7 @@
 import math
 
-from hyperopt.core.search_space import SearchSpace, Uniform
-from hyperopt.strategies.hyperband import Bracket, Hyperband
+from tunekit.core.search_space import SearchSpace, Uniform
+from tunekit.strategies.hyperband import Bracket, Hyperband
 
 
 class TestBracket:
